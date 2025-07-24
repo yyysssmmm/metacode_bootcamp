@@ -19,9 +19,9 @@ df = pd.read_csv('week8/sunspots_for_prophet.csv')
 df['ds'] = pd.to_datetime(df['ds']) 
 
 
-st.subheader("📄 데이터 미리보기")
+st.subheader("📄 불러온 데이터 미리보기")
 
-st.dataframe(df)
+st.dataframe(df.head())
 
 # ----------------------------------
 # [2] Prophet 모델 정의 및 학습
