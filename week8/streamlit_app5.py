@@ -72,14 +72,14 @@ st.subheader("📉 Custom Plot: Actual vs Predicted with Prediction Intervals")
 # TODO: 실제값, 예측값, 신뢰구간을 하나의 plot에 시각화하세요.
 fig3, ax = plt.subplots(figsize=(14, 6))
 
-ax.plot(df['ds'], df["y"], marker='o', label="Actual", color="blue")
-ax.plot(forecast["ds"], forecast["yhat"], linestyle='--', label="Predicted", color="red")
-ax.fill_between(forecast["ds"], forecast["yhat_lower"], forecast["yhat_upper"], label="Prediction Interval", color="red", alpha=0.1)   
-ax.title("Sunspots: Actual vs. Predicted with Prediction Intervals")
-ax.xlabel("Year")
-ax.ylabel("Sun Activity")
-ax.legend()
-ax.grid(True)
+plt.plot(df['ds'], df["y"], marker='o', label="Actual", color="blue")
+plt.plot(forecast["ds"], forecast["yhat"], linestyle='--', label="Predicted", color="red")
+plt.fill_between(forecast["ds"], forecast["yhat_lower"], forecast["yhat_upper"], label="Prediction Interval", color="red", alpha=0.1)   
+plt.title("Sunspots: Actual vs. Predicted with Prediction Intervals")
+plt.xlabel("Year")
+plt.ylabel("Sun Activity")
+plt.legend()
+plt.grid(True)
 
 # 힌트:
 # ax.plot(df["ds"], df["y"], ...)
@@ -100,13 +100,13 @@ merged['residual'] = merged['y'] - merged['yhat']
 # TODO: residual 시계열을 시각화하세요.
 fig4, ax2 = plt.subplots(figsize=(14, 4))
 
-ax2.plot(merged["ds"], merged["residual"], marker='o', label="Residual", color="purple")
-ax2.axhline(0, color='black', linestyle='--')
-ax2.title("Residual Analysis (Actual - Predicted)")
-ax2.xlabel("Year")
-ax2.ylabel("Residual")
-ax2.legend()
-ax2.grid(True)
+plt.plot(merged["ds"], merged["residual"], marker='o', label="Residual", color="purple")
+plt.axhline(0, color='black', linestyle='--')
+plt.title("Residual Analysis (Actual - Predicted)")
+plt.xlabel("Year")
+plt.ylabel("Residual")
+plt.legend()
+plt.grid(True)
 
 # 힌트:
 # ax2.plot(merged["ds"], merged["residual"], ...)
@@ -120,4 +120,3 @@ st.pyplot(fig4)
 st.subheader("📌 Residual Summary Statistics")
 # TODO: merged["residual"].describe()를 출력하세요.
 st.dataframe(merged["residual"].describe())
-
