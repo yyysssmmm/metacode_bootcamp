@@ -120,3 +120,4 @@ st.pyplot(fig4)
 st.subheader("📌 Residual Summary Statistics")
 # TODO: merged["residual"].describe()를 출력하세요.
 st.dataframe(merged["residual"].describe())
+
