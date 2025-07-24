@@ -93,7 +93,7 @@ st.markdown("""
 
 try:
     # 데이터 로드
-    df = load_data('data/sunspots.csv')
+    df = load_data('week8/data/sunspots.csv')
 
     # 사이드바에 파라미터 조절 슬라이더 추가
     st.sidebar.title('시각화 파라미터 조절')
